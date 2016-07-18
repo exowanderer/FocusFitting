@@ -1,6 +1,8 @@
 import pandas as pd
 from astropy import modeling
-from pylab import *;ion()
+from pylab import concatenate, plot, xlim, median, diff, axvline, ion
+
+ion()
 
 fit_lvmq = modeling.fitting.LevMarLSQFitter()
 
@@ -55,9 +57,9 @@ def quadfit_focus(xvar, yvars):
     for k in range(len(yvars)):
         plot(xvar, yvars[k], 'o', color=rcParams['axes.color_cycle'][k])
     else:
-        print 'Dont Plotting Data'
+        print 'Dont Plot Data'
 
     quadmodel = modeling.models.Polynomial1D(degree=2)
 
-    for k in range(len(yvars)):
+    # for k in range(len(yvars)):
         
